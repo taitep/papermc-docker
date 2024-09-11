@@ -8,6 +8,8 @@ RUN apt-get update && \
 
 WORKDIR /server
 
+COPY start.sh /start.sh
+
 EXPOSE 25565
 
-ENTRYPOINT ["/server/start.sh"]
+ENTRYPOINT ["/start.sh"]
