@@ -6,13 +6,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists
 
-RUN groupadd -g 2000 minecraft && \
-    useradd -r -u 2000 -g minecraft minecraft
-
-RUN mkdir -p /server /jarcache && chown minecraft:minecraft /server /jarcache
-
-USER minecraft
-
 WORKDIR /server
 
 COPY start.sh /start.sh
