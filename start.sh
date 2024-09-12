@@ -11,7 +11,7 @@ if [ ! -f /server/$latest_filename ]; then
     echo Found later version, downloading...
     download_url=$api/projects/paper/versions/$MC_VERSION/builds/$latest_build/downloads/$latest_filename
     rm /jarcache/paper-$MC_VERSION-*.jar
-    curl -o /jarcache/$latest_filename $download_url
+    curl -so /jarcache/$latest_filename $download_url
     echo Downloaded!
 fi
 
